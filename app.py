@@ -9,7 +9,7 @@ from utils import MBAPlacement
 app = Flask(__name__)
 
 @app.route('/')
-def  hello_flask():
+def  hello():
 
     # print("Welcome to MBA Placement Prediction")
     return render_template('home.html')
