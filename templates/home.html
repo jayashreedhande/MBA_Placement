@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <link rel="icon" href="data:,"> -->
+        
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>MBA Placement</title>
+          <style>
+              input[type=number], select {
+              width: 20%;
+              padding: 5px 5px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              }
+              body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              
+              * {
+                box-sizing: border-box;
+              }
+              
+              .bg-image {
+                /* The image used */
+                background-image: url("https://t3.ftcdn.net/jpg/01/34/39/66/360_F_134396647_wOo8nlwshD88OKGR8VNflvHXUZrB0u9n.jpg");
+                
+                /* Add the blur effect */
+                filter: blur(2px);
+                -webkit-filter: blur(2px);
+                
+                /* Full height */
+                height: 180vh; 
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;   
+              }
+              
+              /* Position text in the middle of the page/image */
+              .bg-text {
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+                color: white;
+                font-weight: bold;
+                border: 3px solid #f1f1f1;
+                position: absolute;
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 80%;
+                padding: 20px;
+                text-align: center;
+              }
+              </style>
+</head>
+
+    <body TEXT = "WHITE";>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+        <h1> MBA College Placement </h1>
+        
+        <form method="POST", action="{{url_for('prediction')}}">
+          
+            <label for="gender" style="color:Tomato;">Your Gender</label><br>
+            <select name="gender" required>
+              <option  value="" disabled selected hidden >Enter Gender</option>
+              <option value = "M">Male</option>
+              <option value = "F">Female</option>
+            </select>
+            <br><br>
+                    
+            <label for="ssc_p" style="color:Tomato;">SSC Percentage</label><br>
+            <input type="number" placeholder="Enter SSC % " name="ssc_p",min="1" max="100" required>
+            <br><br>
+            
+            <label for="ssc_b" style="color:Tomato;">SSC Board</label><br>
+            <select placeholder="Enter SSC Board" name="ssc_b" required>
+              <option  value="" disabled selected hidden >SSC Board</option>
+              <option value = "Central">Central</option>
+              <option value = "Others">Others</option>
+            </select>
+            <br><br>
+            
+            <label for="hsc_p" style="color:Tomato;">SSC Percentage</label><br>
+            <input type="number" placeholder="Enter HSC % " name="hsc_p" ,min="1" max="100" required>
+            <br><br>
+            
+            <label for="hsc_b" style="color:Tomato;">HSC Board</label><br>
+            <select placeholder="Enter SSC Board" name="hsc_b" required>
+              <option  value="" disabled selected hidden >Enter Board</option>
+              <option value = "Others">Others</option>
+              <option value = "Central">Central</option>
+            </select>
+            <br><br>
+
+            <label for="hsc_s" style="color:Tomato;">HSC Stream</label><br>
+            <select placeholder="Enter SSC Board" name="hsc_s" required>
+              <option  value="" disabled selected hidden >Enter Stream</option>
+              <option value = "Commerce">Commerce</option>
+              <option value = "Science">Science</option>
+              <option value = "Arts">Arts</option>
+            </select>
+            <br><br>
+            
+            <label for="degree_p" style="color:Tomato;">Degree Percentage</label><br>
+            <input type="number" placeholder="Enter Degree % " name="degree_p" ,min="1" max="100" required>
+            <br><br>
+            
+            <label for="degree_t" style="color:Tomato;">Degree Technology</label><br>
+            <select placeholder="Enter SSC Board" name="degree_t" required>
+              <option  value="" disabled selected hidden >Enter Degree Technology</option>
+              <option value = "Comm&Mgmt">Commerce & Management</option>
+              <option value = "Sci&Tech">Science & Tech</option>
+              <option value = "Others">Others</option>
+            </select>
+            <br><br>
+
+            <label for="workex" style="color:Tomato;">Work Experience:</label>
+            <label style="color:rgb(132, 110, 185);">No:</label> <input type = "radio" name= "workex" value = "No">
+            <label style="color:rgb(132, 110, 185);">Yes:</label> <input type = "radio" name= "workex" value = "Yes">
+            <br><br>
+
+            <label for="etest_p" style="color:Tomato;">MBA Entrance Test Percentage</label><br>
+            <input type="number" placeholder="Enter Entrance Test %" name="etest_p", ,min="1" max="100" required>
+            <br><br>
+            
+            <label for="specialisation" style="color:Tomato;">specialisation</label><br>
+            <select placeholder="Enter SSC Board" name="specialisation" required>
+              <option  value="" disabled selected hidden >Enter specialisation</option>
+              <option value = "Mkt&Fin">Marketing & Finance</option>
+              <option value = "Mkt&HR">Marketing & HR</option>
+            </select>
+            <br><br>
+
+            <label for="mba_p" style="color:Tomato;">MBA Percentage</label><br>
+            <input type="number" placeholder="Enter MBA % " name="mba_p" , min="1" max="100" required>
+            <br><br>
+
+            <!-- Submit button -->
+            <input type="submit" value="SUBMIT">
+            <p style = "font-size: small;">© Jayashri Dhande.</p>
+            <br><br>
+        
+        </form>
+  </body>
+</html>
